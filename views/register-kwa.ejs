@@ -1,0 +1,207 @@
+
+
+<%- include('./partials/nav') %>
+<!-- <div class="page-header">
+  <div class=" text-center ">
+      <h5 class="text-uppercase">About Us</h5>
+  </div>
+</div>
+ -->
+
+<br>
+<br>
+<br>
+    <main class="main">
+        <section id="registration" class="registration py-5">
+            <div class="container">
+              <div class="row justify-content-center">
+                <div class="col-lg-6 col-md-8">
+                  <div class="card shadow-lg">
+                    <div class="card-body">
+                      <h3 class="card-title text-center mb-4">Join Us</h3>
+                      <form id="registrationForm" action="/register" method="POST" novalidate>
+                        <!-- Name -->
+                        <div class="form-group mb-3">
+                          <label for="name">Full Name</label>
+                          <input 
+                            type="text" 
+                            class="form-control" 
+                            id="name" 
+                            name="name" 
+                            placeholder="Enter your full name" 
+                            required>
+                          <div class="invalid-feedback">Please enter your full name.</div>
+                        </div>
+          
+                        <!-- Email -->
+                        <div class="form-group mb-3">
+                          <label for="email">Email Address</label>
+                          <input 
+                            type="email" 
+                            class="form-control" 
+                            id="email" 
+                            name="email" 
+                            placeholder="Enter your email" 
+                            required>
+                          <div class="invalid-feedback">Please enter a valid email address.</div>
+                        </div>
+          
+                        <!-- Phone Number -->
+                        <div class="form-group mb-3">
+                          <label for="phone">Phone Number</label>
+                          <input 
+                            type="tel" 
+                            class="form-control" 
+                            id="phone" 
+                            name="phone" 
+                            placeholder="Enter your phone number" 
+                            required>
+                          <div class="invalid-feedback">Please enter a valid phone number.</div>
+                        </div>
+          
+                        <!-- State/Current Location -->
+                        <div class="form-group mb-3">
+                          <label for="state">State or Current Location</label>
+                          <input 
+                            type="text" 
+                            class="form-control" 
+                            id="state" 
+                            name="state" 
+                            placeholder="Enter your state or current location" 
+                            required>
+                          <div class="invalid-feedback">Please enter your state or current location.</div>
+                        </div>
+          
+                        <!-- Gender -->
+                        <div class="form-group mb-3">
+                          <label for="gender">Gender</label>
+                          <select class="form-select" id="gender" name="gender" required>
+                            <option value="" selected disabled>Select your gender</option>
+                            <option value="male">Male</option>
+                            <option value="female">Female</option>
+                            <option value="other">Other</option>
+                          </select>
+                          <div class="invalid-feedback">Please select your gender.</div>
+                        </div>
+          
+                        <!-- Age Group -->
+                        <div class="form-group mb-3">
+                          <label for="age-group">Age Group</label>
+                          <select class="form-select" id="age-group" name="ageGroup" required>
+                            <option value="" selected disabled>Select your age group</option>
+                            <option value="12-25">12-25</option>
+                            <option value="26-40">26-40</option>
+                            <option value="41-55">41-55</option>
+                            <option value="56-above">56 and above</option>
+                          </select>
+                          <div class="invalid-feedback">Please select your age group.</div>
+                        </div>
+          
+                        <!-- Interests -->
+                        <div class="form-group mb-3">
+                          <label for="interests">Select Your Interest</label>
+                          <select class="form-select" id="interests" name="interests" required>
+                            <option value="" selected disabled>Select an interest</option>
+                            <option value="ibeno-beach">Ibeno Beach</option>
+                            <option value="kwa-falls-4.0">Kwa Falls 4.0</option>
+                          </select>
+                          <div class="invalid-feedback">Please select an area of interest.</div>
+                        </div>
+          
+                        <!-- Submit Button -->
+                        <div class="d-grid">
+                          <button type="submit" class="btn btn-primary btn-lg">Register</button>
+                        </div>
+          
+                        <!-- Link to Login -->
+                        <div class="text-center mt-3">
+                          <p>Already have an account? <a href="/login" class="text-primary">Login here</a>.</p>
+                        </div>
+                      </form>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+          
+    </main>
+          <script>
+            document.getElementById('registrationForm').addEventListener('submit', function (event) {
+              event.preventDefault(); // Prevent form submission
+              const form = this;
+              const name = form.name.value.trim();
+              const email = form.email.value.trim();
+              const phone = form.phone.value.trim();
+              const state = form.state.value.trim();
+              const gender = form.gender.value;
+              const ageGroup = form.ageGroup.value;
+              const interests = form.interests.value;
+          
+              let isValid = true;
+          
+              // Validate name
+              if (!name) {
+                isValid = false;
+                form.name.classList.add('is-invalid');
+              } else {
+                form.name.classList.remove('is-invalid');
+              }
+          
+              // Validate email
+              const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+              if (!email || !emailRegex.test(email)) {
+                isValid = false;
+                form.email.classList.add('is-invalid');
+              } else {
+                form.email.classList.remove('is-invalid');
+              }
+          
+              // Validate phone
+              const phoneRegex = /^[0-9]{10,15}$/;
+              if (!phone || !phoneRegex.test(phone)) {
+                isValid = false;
+                form.phone.classList.add('is-invalid');
+              } else {
+                form.phone.classList.remove('is-invalid');
+              }
+          
+              // Validate state
+              if (!state) {
+                isValid = false;
+                form.state.classList.add('is-invalid');
+              } else {
+                form.state.classList.remove('is-invalid');
+              }
+          
+              // Validate gender
+              if (!gender) {
+                isValid = false;
+                form.gender.classList.add('is-invalid');
+              } else {
+                form.gender.classList.remove('is-invalid');
+              }
+          
+              // Validate age group
+              if (!ageGroup) {
+                isValid = false;
+                form.ageGroup.classList.add('is-invalid');
+              } else {
+                form.ageGroup.classList.remove('is-invalid');
+              }
+          
+              // Validate interests
+              if (!interests) {
+                isValid = false;
+                form.interests.classList.add('is-invalid');
+              } else {
+                form.interests.classList.remove('is-invalid');
+              }
+          
+              // If valid, submit the form
+              if (isValid) {
+                form.submit();
+              }
+            });
+          </script>
+          

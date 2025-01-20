@@ -1,0 +1,81 @@
+<!-- Transparent Navbar -->
+<nav id="navbar" class="navbar navbar-expand-lg navbar-light fixed-top">
+	<div class="container">
+		<!-- Navbar Toggler and Logo -->
+
+			<button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<a class="navbar-brand text-light" href="/"><img src="/img/logo.png" alt="logo"></a>
+
+
+		<!-- Navbar items visible on larger screens -->
+		<div class="collapse navbar-collapse" id="navbarSupportedContent">
+			<ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+			  <li class="nav-item">
+				<a class="nav-link" aria-current="page" href="/#">Home</a>
+			  </li>
+			  <li class="nav-item">
+				<a class="nav-link" href="/#abouts">About us</a>
+			  </li>
+			  <li class="nav-item">
+				<a class="nav-link" href="/#trips">Trips</a>
+			  </li>
+			  <li class="nav-item">
+				<a class="nav-link" href="/#gallery">Gallery</a>
+			  </li>
+			 
+			  <li class="nav-item">
+				<a class="nav-link" href="/#contact">Contact us</a>
+			  </li>
+			  <% if(userActive == false){ %>
+
+			  <% } else { %> 
+				<li><a href="/handler" class="nav-link my-btn-primary text-white">Continue</a></li>
+			  <% } %>
+			</ul>
+		</div>
+
+	
+	</div>
+</nav>
+
+
+<!-- Offcanvas Navbar for smaller screens -->
+<div class="offcanvas offcanvas-start offcanvas-fullscreen bg-dark text-white" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+	<div class="offcanvas-header">
+	  <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Menu</h5>
+	  <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+	</div>
+	
+	<div class="offcanvas-body d-flex flex-column justify-content-between">
+	  <!-- Navigation Links -->
+	  <ul class="my-nav-links my-nav-links-mobile list-unstyled" id="my-navLinks">
+  
+		<% if (userActive == false) { %>
+		  <!-- Non-logged-in view -->
+		  
+		  
+		  <hr class="text-secondary">
+		  
+		  <!-- Useful Links -->
+		  <p class="fs-5 fw-bold text-light">Useful Links</p>
+		  <li><a class="nav-link text-white d-flex align-items-center" href="/#"><i class="bi bi-tools me-2"></i>Home</a></li>
+		  <li><a class="nav-link text-white d-flex align-items-center" href="/#abouts"><i class="bi bi-tools me-2"></i>Abouts</a></li>
+		  <li><a class="nav-link text-white d-flex align-items-center" href="/#trips"><i class="bi bi-tools me-2"></i>Trips</a></li>
+		  <li><a class="nav-link text-white d-flex align-items-center" href="/#gallery"><i class="bi bi-question-circle me-2"></i>Gallery</a></li>
+		  <li><a class="nav-link text-white d-flex align-items-center" href="/#contact"><i class="bi bi-envelope me-2"></i>Contact</a></li>
+  
+		  <hr class="text-secondary">
+		  
+		  <!-- Actions -->
+		  <p class="fs-5 fw-bold text-light">Actions</p>
+		  <li><a class="nav-link text-warning d-flex align-items-center my-btn-primary" href="/login"><i class="bi bi-box-arrow-in-right me-2"></i>Login</a></li>
+		
+		<% } else { %> 
+		  <!-- Logged-in view -->
+		<% } %>
+	  </ul>
+	</div>
+  </div>
+  

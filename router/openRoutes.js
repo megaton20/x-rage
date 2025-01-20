@@ -17,39 +17,68 @@ let appName = "x-plore rage"
 router.get('/', async (req, res) => {
   res.render('index', {
     pageTitle: `Welcome to ${appName}`,
+    userActive:false,
+    appName
   });
 })
-
-
-router.get('/prizes',  (req, res) => {
-
-  res.render('prizes', {
-    pageTitle: `Welcome to ${appName}`,
-    appName,
+router.get('/gallery', async (req, res) => {
+  res.render('gallery', {
+    pageTitle: `gallery`,
+    userActive:false,
+    appName
   });
 })
-
-router.get('/contact',  (req, res) => {
-  res.render('contact', {
+router.get('/trip-details', async (req, res) => {
+  res.render('trip-details', {
     pageTitle: `Welcome to ${appName}`,
+    userActive:false,
     appName
   });
 })
 
+
+router.get('/abouts',  (req, res) => {
+
+  res.render('abouts', {
+    pageTitle: `Welcome to ${appName}`,
+    userActive:false,
+    appName,
+  });
+})
+
+router.get('/terms',  (req, res) => {
+
+  res.render('terms', {
+    pageTitle: `Welcome to ${appName}`,
+    userActive:false,
+    appName,
+  });
+})
+
+router.get('/policy',  (req, res) => {
+
+  res.render('policy', {
+    pageTitle: `Welcome to ${appName}`,
+    userActive:false,
+    appName,
+  });
+})
 
 
 router.get('/login',forwardAuthenticated,  (req, res) => {
 
   res.render('login', {
     pageTitle: `login`,
+    userActive:false,
     appName
   });
 })
 
-router.get('/register',forwardAuthenticated,  (req, res) => {
+router.get('/register-ibeno',forwardAuthenticated,  (req, res) => {
 
-  res.render('register', {
-    pageTitle: `login`,
+  res.render('register-ibeno', {
+    pageTitle: `register-ibeno`,
+    userActive:false,
     appName
   });
 })
