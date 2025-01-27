@@ -1,75 +1,81 @@
-  <!-- Contact Section -->
-  <section id="contact" class="contact section">
+   <!-- Contact Section -->
+   <section id="contact" class="contact section">
 
     <!-- Section Title -->
     <div class="container section-title" data-aos="fade-up">
       <h2>Contact</h2>
-
+      <p>Please send us a message using he form provided...</p>
     </div><!-- End Section Title -->
 
-    <div class="container" data-aos="fade-up" data-aos-delay="100">
+    <div class="mb-5">
+      <iframe
+      style="width: 100%; height: 400px;"
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d63434.34430102186!2d8.3064091!3d4.9586368!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x10678758b6bdf14d%3A0x50e2e81cf1dff63c!2sCalabar%2C%20Cross%20River%20State!5e0!3m2!1sen!2sng!4v1675878653548"
+      frameborder="0"
+      allowfullscreen=""></iframe>
+    
+    </div><!-- End Google Maps -->
 
-      <div class="row gy-4">
+    <div class="container" data-aos="fade">
 
-        <div class="col-lg-6">
+      <div class="row gy-5 gx-lg-5">
 
-          <div class="row gy-4">
-            <div class="col-md-6">
-              <div class="info-item" data-aos="fade" data-aos-delay="200">
-                <i class="bi bi-geo-alt"></i>
-                <h3>Address</h3>
-                <p>Cross River, Calabar 545211</p>
+        <div class="col-lg-4">
+
+          <div class="info shadow" data-aos="fade" data-aos-delay="100">
+            <!-- <h3>Get in touch</h3> -->
+            <!-- <p>Et id eius voluptates atque nihil voluptatem enim in tempore minima sit ad mollitia commodi minus.</p> -->
+
+            <div class="info-item d-flex" data-aos="fade" data-aos-delay="200">
+              <i class="bi bi-geo-alt flex-shrink-0"></i>
+              <div>
+                <h4>Location:</h4>
+                <p>st. patrick's parish, ikot Ansa, Calabar</p>
               </div>
             </div><!-- End Info Item -->
 
-            <div class="col-md-6">
-              <div class="info-item" data-aos="fade" data-aos-delay="300">
-                <i class="bi bi-telephone"></i>
-                <h3>Call Us</h3>
-                <p>+234 703 381 3184</p>
-              </div>
-            </div><!-- End Info Item -->
-
-            <div class="col-md-6">
-              <div class="info-item" data-aos="fade" data-aos-delay="400">
-                <i class="bi bi-envelope"></i>
-                <h3>Email Us</h3>
+            <div class="info-item d-flex" data-aos="fade" data-aos-delay="300">
+              <i class="bi bi-envelope flex-shrink-0"></i>
+              <div>
+                <h4>Email:</h4>
                 <p>Xplorerage@gmail.com</p>
               </div>
             </div><!-- End Info Item -->
 
-
+            <div class="info-item d-flex" data-aos="fade" data-aos-delay="400">
+              <i class="bi bi-phone flex-shrink-0"></i>
+              <div>
+                <h4>Call:</h4>
+                <p>+234 703 381 3184</p>
+              </div>
+            </div><!-- End Info Item -->
 
           </div>
 
         </div>
 
-        <div class="col-lg-6">
-          <form action="#" method="post" class="php-email-form" data-aos="fade-up" data-aos-delay="200">
-            <div class="row gy-4">
-
-              <div class="col-md-6">
-                <input type="text" name="name" class="form-control" placeholder="Your Name" required="">
+        <div class="col-lg-8">
+          <form action="forms/contact.php" method="post" role="form" class="php-email-form">
+            <div class="row">
+              <div class="col-md-6 form-group">
+                <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required="">
               </div>
-
-              <div class="col-md-6 ">
-                <input type="email" class="form-control" name="email" placeholder="Your Email" required="">
+              <div class="col-md-6 form-group mt-3 mt-md-0">
+                <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" required="">
               </div>
-
-              <div class="col-12">
-                <input type="text" class="form-control" name="subject" placeholder="Subject" required="">
-              </div>
-
-              <div class="col-12">
-                <textarea class="form-control" name="message" rows="6" placeholder="Message" required=""></textarea>
-              </div>
-
-              <div class="col-12 text-center">
-
-                <button type="submit" class="w-100">Send Message</button>
-              </div>
-
             </div>
+            <div class="form-group mt-3">
+              <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" required="">
+            </div>
+            <div class="form-group mt-3">
+              <textarea class="form-control" name="message" placeholder="Message" required=""></textarea>
+            </div>
+            <div class="my-3">
+              <div class="loading">Loading</div>
+              <div class="error-message"></div>
+              <div class="sent-message">Your message has been sent. Thank you!</div>
+            </div>
+            <div class="text-center"><button type="submit">Send Message</button></div>
           </form>
         </div><!-- End Contact Form -->
 
@@ -78,4 +84,3 @@
     </div>
 
   </section><!-- /Contact Section -->
-
