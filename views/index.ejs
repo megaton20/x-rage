@@ -1,33 +1,8 @@
 <main class="main" id="top">
   <%-include('./partials/nav')%>
 
-  <section style="padding-top: 7rem;">
-    <div class="bg-holder" style="background-image:url(assets/img/hero/hero-bg.svg);">
-    </div>
-    <!--/.bg-holder-->
 
-    <div class="container">
-      <div class="row align-items-center">
-        <div class="col-md-5 col-lg-6 order-0 order-md-1 text-end"><img class="pt-7 pt-md-0 hero-img" src="/assets/img/hero/hero-img.png" alt="hero-header" /></div>
-        <div class="col-md-7 col-lg-6 text-md-start text-center py-6">
-          <h4 class="fw-bold text-danger mb-3">Best Destinations around the world</h4>
-          <h1 class="hero-title">Travel, enjoy and live a new and full life</h1>
-          <div class="text-center text-md-start"> <a class="btn btn-primary btn-lg me-md-4 mb-3 mb-md-0 border-0 primary-btn-shadow" href="#!" role="button">Find out more</a>
-            <div class="w-100 d-block d-md-none"></div><a href="#!" role="button" data-bs-toggle="modal" data-bs-target="#popupVideo"><span class="btn btn-danger round-btn-lg rounded-circle me-3 danger-btn-shadow"> <img src="assets/img/hero/play.svg" width="15" alt="paly"/></span></a><span class="fw-medium">Watch about next trip </span>
-            <div class="modal fade" id="popupVideo" tabindex="-1" aria-labelledby="popupVideo" aria-hidden="true">
-              <div class="modal-dialog modal-dialog-centered modal-lg">
-                <div class="modal-content">
-                  <iframe class="rounded" style="width:100%;max-height:500px;" height="500px" src="https://youtu.be/6-sZjOlwUgA?si=lS-ZBosQAM1VAN9R" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="allowfullscreen"></iframe>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="hero">
+  <section class="hero pt-0 position-relative">
     <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000">
       <div class="carousel-indicators">
         <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
@@ -66,11 +41,39 @@
         <span class="visually-hidden">Next</span>
       </button>
     </div>
+  
+    <!-- Overlay -->
+    <div class="overlay">
+      <p>Next Trip loading...</p>
+      <h2>Ibeno beach party!!!</h2>
+      <p>A weekend gateway December 2025</p>
+      <div id="countdown"></div>
+    </div>
   </section>
+  <style>
   
+    .overlay {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: rgba(0, 0, 0, 0.6);
+      color: white;
+      padding: 20px;
+      text-align: center;
+      border-radius: 10px;
+      width: 80%;
+      max-width: 500px;
+    }
   
-  <!-- ============================================-->
-  <!-- <section> begin ============================-->
+    #countdown {
+      font-size: 20px;
+      margin-top: 10px;
+    }
+  
+    </style>
+
+
   <section class="pt-5 pt-md-9" id="service">
 
     <div class="container">
@@ -119,9 +122,6 @@
   <!-- <section> close ============================-->
 
 
-
-  <!-- ============================================-->
-  <!-- <section> begin ============================-->
   <section class="pt-5" id="destination">
 
     <div class="container">
@@ -169,8 +169,7 @@
 
 
 
-  <!-- ============================================-->
-  <!-- <section> begin ============================-->
+
   <section id="booking">
 
     <div class="container">
@@ -469,7 +468,7 @@
 
 
   <!-- ============================================-->
-  <!-- <section> begin ============================-->
+
   <section class="pt-6">
 
     <div class="container">
@@ -479,7 +478,7 @@
         <div class="position-absolute start-0 bottom-0 ms-3 z-index--1 d-none d-sm-block"> <img src="assets/img/cta/shape-bg1.png" style="max-width: 340px;" alt="cta shape" /></div>
         <div class="row justify-content-center">
           <div class="col-lg-8 col-md-10">
-            <h2 class="text-secondary lh-1-7 mb-7">Subscribe to get information, latest news and other interesting offers about Cobham</h2>
+            <h2 class="text-secondary lh-1-7 mb-7">Subscribe to get information, latest news and other interesting offers about us</h2>
             <form class="row g-3 align-items-center w-lg-75 mx-auto">
               <div class="col-sm">
                 <div class="input-group-icon">
@@ -502,7 +501,7 @@
 
 
   <!-- ============================================-->
-  <!-- <section> begin ============================-->
+
   <section class="pb-0 pb-lg-4">
 
     <div class="container">
@@ -543,3 +542,37 @@
     <p class="mb-0 text-secondary fs--1 fw-medium">All rights reserved@Xplorerage.com.ng </p>
   </div>
 </main>
+
+
+<script>
+    
+    document.addEventListener("DOMContentLoaded", function() {
+    function updateCountdown() {
+      console.log("Countdown updating...");
+      const targetDate = new Date("December 19, 2025 00:00:00").getTime();
+      const now = new Date().getTime();
+      const timeLeft = targetDate - now;
+  
+      if (timeLeft > 0) {
+        const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+        
+        document.getElementById("countdown").innerHTML = 
+          `
+          <strong>${days}</strong> Days 
+          <strong>${hours}</strong> Hours <br>
+          <strong>${minutes}</strong> Minutes 
+          <strong>${seconds}</strong> Seconds
+          `;
+      } else {
+        document.getElementById("countdown").innerHTML = "Vacation Time!";
+      }
+    }
+  
+    updateCountdown(); // Run immediately
+    setInterval(updateCountdown, 1000); // Update every second
+  });
+  
+</script>

@@ -17,6 +17,7 @@
   margin-bottom: 0;
 }
 
+
 .carousel-item img {
   max-height: 80vh; /* Set max height for desktop view */
   object-fit: cover; /* Ensures images maintain aspect ratio and don't stretch */

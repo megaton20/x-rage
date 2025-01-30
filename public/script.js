@@ -121,7 +121,15 @@ function startCountdown(targetDate, elementIds) {
     });
   });
 
+
+
   // Initialize everything on window load
   window.addEventListener('load', function() {
       initializeCarousel();
   });
+
+
+
+   
+  
+    
